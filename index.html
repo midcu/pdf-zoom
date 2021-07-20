@@ -1,0 +1,40 @@
+<html dir="ltr" mozdisallowselectionprint>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>pdf-手指控制放大缩小</title>
+    <script src="js/pdf.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/pdf.worker.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/pdf-zoom.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap-icons.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+    <div class="main">
+        <div class="main-header">
+            <div class="main-header-right"></div>
+            <div>
+                <i onclick="mPdfZoom.zoomInOut(1.1)" class="page-icons bi bi-plus"></i>
+                <div class="icon-separator"></div>
+                <i onclick="mPdfZoom.zoomInOut(0.9)" class="page-icons bi bi-dash"></i>
+            </div>
+            <div class="main-header-left">
+                <div style="margin-right: 10px;"></div>
+            </div>
+        </div>
+        <div id="main-container" class="main-container"></div>
+    </div>
+</body>
+<script>
+    var mPdfZoom = {};
+    pdfZoom.call(mPdfZoom, 'main-container', {
+        pdfUrl: "./09.pdf",// pdf地址
+        scale: 5  // 最大放大倍数
+    });
+</script>
+
+</html>
